@@ -1,4 +1,4 @@
-package DC;
+package CC;
 
 import Abstract.AbstractChess;
 
