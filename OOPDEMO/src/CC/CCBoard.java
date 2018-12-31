@@ -16,9 +16,8 @@ public class CCBoard extends AbstractBoard {
 	}
 
 	@Override
-	protected int[][] getLocation(int x, int y) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean getLocation(int x, int y) {
+		return locations[x][y];
 	}
 
 }

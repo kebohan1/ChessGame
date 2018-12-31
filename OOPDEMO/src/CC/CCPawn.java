@@ -1,12 +1,13 @@
 package CC;
+import Abstract.AbstractBoard;
 import Abstract.AbstractPawn;
 import Abstract.Rule;
 import Abstract.Type;
 
 public class CCPawn extends AbstractPawn {
-
-	public CCPawn(Rule rule, Type type) {
-		super(rule, type);
+	
+	public CCPawn(Rule rule, Type type,AbstractBoard board) {
+		super(rule, type, board);
 		// TODO Auto-generated constructor stub
 	}
 
