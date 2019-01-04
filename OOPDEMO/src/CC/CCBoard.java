@@ -10,7 +10,7 @@ public class CCBoard extends AbstractBoard {
 	}
 
 	@Override
-	protected void setLocation(int x, int y) {
+	public void setLocation(int x, int y) {
 		// TODO Auto-generated method stub
 
 	}

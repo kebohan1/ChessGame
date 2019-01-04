@@ -2,7 +2,7 @@ package DC;
 import Abstract.Rule;
 
 public class DCRule implements Rule {
-
+	
 	@Override
 	public void overRule() {
 		// TODO Auto-generated method stub
@@ -11,7 +11,7 @@ public class DCRule implements Rule {
 
 	@Override
 	public void moveRule() {
-		// TODO Auto-generated method stub
+		
 
 	}
 

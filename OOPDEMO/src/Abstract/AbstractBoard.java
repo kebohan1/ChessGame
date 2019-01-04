@@ -1,13 +1,14 @@
 package Abstract;
 
 public abstract class AbstractBoard {
-	protected boolean[][] locations;
+	private AbstractPawn[] pawns;
+	private Rule rule;
 	
-	abstract protected void setLocation(int x,int y);
-	public abstract boolean getLocation(int x,int y);
-	
-	public AbstractBoard(boolean[][] locations) {
-		super();
-		this.locations = locations;
+	public AbstractBoard(AbstractPawn[] pawns,Rule rule) {
+		this.pawns = pawns;
+		this.rule = rule;
 	}
+	
+	abstract public void move(AbstractPawn pawn, int x,int y);	
+	abstract public void eat(AbstractPawn pawn);
 }

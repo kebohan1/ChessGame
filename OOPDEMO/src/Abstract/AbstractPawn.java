@@ -2,15 +2,31 @@ package Abstract;
 
 public abstract class AbstractPawn {
 
-	protected Rule rule ;
-	protected Type type ;
-	protected AbstractBoard board;
-	public AbstractPawn(Rule rule, Type type,AbstractBoard board) {
-		this.rule = rule;
+	private Type type ;
+	private Color color;
+	private int xLoc;
+	private int yLoc;
+	public AbstractPawn(Type type,Color color,int x,int y) {
 		this.type = type;
-		this.board = board;
+		this.color = color;
+		this.xLoc = x;
+		this.yLoc = y;
+	}
+	public int getxLoc() {
+		return xLoc;
+	}
+	public void setLoc(int xLoc,int yLoc) {
+		this.xLoc = xLoc;
+		this.yLoc = yLoc;
+	}
+	public int getyLoc() {
+		return yLoc;
+	}
+	public Type getType() {
+		return type;
+	}
+	public Color getColor() {
+		return color;
 	}
 	
-	abstract public void move(int x,int y);	
-	abstract public void eat(AbstractPawn pawn);
 }
