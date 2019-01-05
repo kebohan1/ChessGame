@@ -21,7 +21,7 @@ public class CCRule implements Rule{
 		switch(pawn.getType()) {
 		case Soldiers:
 			if(pawn.getColor()==Color.Red) {
-				if(movey==1&&movex==0||Math.abs(movex)==1&&movey==0&&x<5) {
+				if(movey==1&&movex==0||Math.abs(movex)==1&&movey==0&&y<5) {
 					if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)==Color.Black)
 					{
 						pawns.remove(havepawn(pawns,x,y));
@@ -41,7 +41,7 @@ public class CCRule implements Rule{
 			}
 			else
 			{
-				if(movey==-1&&movex==0||Math.abs(movex)==1&&movey==0&&x>=5) {
+				if(movey==-1&&movex==0||Math.abs(movex)==1&&movey==0&&y>=5) {
 					if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)==Color.Red)
 					{
 						pawns.remove(havepawn(pawns,x,y));
@@ -225,13 +225,89 @@ public class CCRule implements Rule{
 			}
 			break;
 		case Elephants:
-			if(x<)
+			if(pawn.getColor()==Color.Black&&y<5||pawn.getColor()==Color.Red&&y>4) {
+				if(movex==2&&movey==-2)
+				{
+					if(havepawn(pawns,pawn.getxLoc()+1,pawn.getyLoc()-1)!=-1) {
+						exception=true;
+					}
+				} else if(movex==-2&&movey==-2) {
+					if(havepawn(pawns,pawn.getxLoc()-1,pawn.getyLoc()-1)!=-1) {
+						exception=true;
+					}
+				} else if(movey==2&&movex==-2) {
+					if(havepawn(pawns,pawn.getxLoc()-1,pawn.getyLoc()+1)!=-1) {
+						exception=true;
+					}
+					
+				} else if(movey==2&&movex==2) {
+					if(havepawn(pawns,pawn.getxLoc()+1,pawn.getyLoc()+1)!=-1) {
+						exception=true;
+					}
+				} else {
+					exception=true;
+				}
+				if(!exception) {
+					if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)!=pawn.getColor())
+					{
+						pawns.remove(havepawn(pawns,x,y));
+						pawns.get(havepawn(pawns,pawn.getxLoc(),pawn.getyLoc())).setLoc(x, y);
+					}
+					else if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)==pawn.getColor()) {
+						exception=true;
+					}
+					else
+					{
+						pawns.get(havepawn(pawns,pawn.getxLoc(),pawn.getyLoc())).setLoc(x, y);
+					}
+				}
+			}
 			break;
 		case Advisors:
+			if((pawn.getColor()==Color.Black&&y>=0&&y<=2&&x>=3&&x<=5||pawn.getColor()==Color.Red&&y>=7&&y<=9&&x>=3&&x<=5)&&Math.abs(movex)==1&&Math.abs(movey)==1) {
+
+					if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)!=pawn.getColor())
+					{
+						pawns.remove(havepawn(pawns,x,y));
+						pawns.get(havepawn(pawns,pawn.getxLoc(),pawn.getyLoc())).setLoc(x, y);
+					}
+					else if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)==pawn.getColor()) {
+						exception=true;
+					}
+					else
+					{
+						pawns.get(havepawn(pawns,pawn.getxLoc(),pawn.getyLoc())).setLoc(x, y);
+					}
+			}
+			else
+			{
+				exception=true;
+			}
+			
 			break;
 		case King:
+			if((pawn.getColor()==Color.Black&&y>=0&&y<=2&&x>=3&&x<=5||pawn.getColor()==Color.Red&&y>=7&&y<=9&&x>=3&&x<=5)&&(Math.abs(movex)==1&&movey==0||Math.abs(movey)==1&&movex==0)) {
+
+				if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)!=pawn.getColor())
+				{
+					pawns.remove(havepawn(pawns,x,y));
+					pawns.get(havepawn(pawns,pawn.getxLoc(),pawn.getyLoc())).setLoc(x, y);
+				}
+				else if(havepawn(pawns,x,y)!=-1&&pawncolor(pawns,x,y)==pawn.getColor()) {
+					exception=true;
+				}
+				else
+				{
+					pawns.get(havepawn(pawns,pawn.getxLoc(),pawn.getyLoc())).setLoc(x, y);
+				}
+			}
+			else
+			{
+				exception=true;
+			}
 			break;
 		default:
+			exception=true;
 			break;
 		}
 		if(exception)
