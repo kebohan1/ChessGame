@@ -1,7 +1,9 @@
 package Abstract;
 
+import java.util.ArrayList;
+
 public interface Rule {
-	public void overRule(AbstractPawn[] pawns);  //還不確定回傳和傳入
+	public void overRule(ArrayList<AbstractPawn> pawns);  //嚙誶歹蕭嚙確嚙緩嚙稷嚙褒和嚙褒入
 	public void moveRule(AbstractPawn pawn, int x, int y);
 	public void eatRule(AbstractPawn pawn);
 }

@@ -1,10 +1,12 @@
 package Abstract;
 
-public abstract class AbstractBoard {
-	protected AbstractPawn[] pawns;
+import java.util.ArrayList;
+
+public abstract class AbstractBoard<E> {
+	protected ArrayList<E> pawns;
 	protected Rule rule;
 	
-	public AbstractBoard(AbstractPawn[] pawns,Rule rule) {
+	public AbstractBoard(ArrayList<E> pawns,Rule rule) {
 		this.pawns = pawns;
 		this.rule = rule;
 	}
