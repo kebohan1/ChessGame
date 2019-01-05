@@ -11,6 +11,5 @@ public abstract class AbstractBoard<E> {
 		this.rule = rule;
 	}
 	
-	abstract public void move(AbstractPawn pawn, int x,int y);	
-	abstract public void eat(AbstractPawn Hunter,AbstractPawn prey);
+	abstract public void move(AbstractPawn pawn, int x,int y);
 }
