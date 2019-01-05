@@ -12,5 +12,5 @@ public abstract class AbstractBoard<E> {
 	}
 	
 	abstract public void move(AbstractPawn pawn, int x,int y);	
-	abstract public void eat(AbstractPawn pawn);
+	abstract public void eat(AbstractPawn Hunter,AbstractPawn prey);
 }
