@@ -1,8 +1,8 @@
 package Abstract;
 
 public abstract class AbstractBoard {
-	private AbstractPawn[] pawns;
-	private Rule rule;
+	protected AbstractPawn[] pawns;
+	protected Rule rule;
 	
 	public AbstractBoard(AbstractPawn[] pawns,Rule rule) {
 		this.pawns = pawns;
