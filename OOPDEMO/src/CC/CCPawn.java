@@ -1,26 +1,15 @@
 package CC;
 import Abstract.AbstractBoard;
 import Abstract.AbstractPawn;
+import Abstract.Color;
 import Abstract.Rule;
 import Abstract.Type;
 
 public class CCPawn extends AbstractPawn {
 	
-	public CCPawn(Rule rule, Type type,AbstractBoard board) {
-		super(rule, type, board);
+	public CCPawn(Type type,Color color,int x,int y) {
+		super(type,color, x,y);
 		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public void move(int x, int y) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void eat(AbstractPawn pawn) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

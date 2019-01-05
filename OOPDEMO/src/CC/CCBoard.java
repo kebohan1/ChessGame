@@ -1,23 +1,23 @@
 package CC;
 
+import java.util.ArrayList;
+
 import Abstract.AbstractBoard;
+import Abstract.AbstractPawn;
+import Abstract.Rule;
 
 public class CCBoard extends AbstractBoard {
 
-	public CCBoard(boolean[][] locations) {
-		super(locations);
+	public CCBoard(ArrayList<AbstractPawn> pawns,Rule rule) {
+		super(pawns,rule);
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void setLocation(int x, int y) {
-		// TODO Auto-generated method stub
-
+	public void move(AbstractPawn pawn, int x,int y) {
+		rule.moveRule(pawns, pawn, x, y);
 	}
-
-	@Override
-	public boolean getLocation(int x, int y) {
-		return locations[x][y];
+	public void eat(AbstractPawn Hunter,AbstractPawn prey) {
+		rule.eatRule(Hunter,prey);
 	}
 
 }
